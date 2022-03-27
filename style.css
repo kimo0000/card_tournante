@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+h1 {
+    padding: 20px;
+}
+
+h1 span {
+    display: block;
+    color: orange;
+}
+
+hr {
+    opacity: 0.6;
+    margin-bottom: 40px;
+}
+
+.card_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    perspective: 1000px;
+}
+
+.card {
+    width: 250px;
+    height: 300px;
+    margin: 20px 0;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.card:hover {
+    transform: rotateY(360deg);
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    padding: 15px;
+    background-color: #f50;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card .front {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 1s;
+}
+
+
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+
+.card p:nth-child(1) {
+    width: fit-content;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.card p:nth-child(2) {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.card i {
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+}
+
+.card .back  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.back a {
+    font-size: 10px;
+    padding: 10px;
+    background-color: rgb(6, 6, 56);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.back a:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+.card:nth-child(odd) .front {
+    background-color: blue
+}
+
+.card:nth-child(even) .back {
+    background-color: red
+}
+
